@@ -6,6 +6,7 @@ DXRuby でゲーム作成を勉強する為のもの
 ## Ruby 基礎
 
 [Programming について](./about-programming.md)
+[Ruby について](./about-ruby.md)
 
 ## 第一週目
 
