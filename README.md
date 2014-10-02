@@ -7,6 +7,9 @@ DXRuby でゲーム作成を勉強する為のもの
 
 - [Ruby](http://www.ruby-lang.org/ja/)
 - [DXRuby](http://dxruby.sourceforge.jp)
+- [DXRuby キーコードリファレンス](http://dxruby.sourceforge.jp/DXRubyReference/2009823193120640.htm)
+
+を参照して下さい。
 
 ## 基礎学習
 
