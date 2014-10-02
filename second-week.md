@@ -84,7 +84,7 @@ Sprite データとして ２ つの画像 (オブジェクト) を用意しま�
 サンプルコードを実行して衝突する事と確認して下さい。
 ```ruby
 image_chara = Image.load_tiles("../image/character.png", 4, 4)
-chara = Sprite.new(0, 0, image_chara[0])
+chara = Sprite.new(400, 200, image_chara[0])
 
 image_box = Image.load_tiles("../image/colorbox.png", 6, 1)
 box = Sprite.new(200, 200, image_box[0])
@@ -101,28 +101,6 @@ Window.loop do
     # 結果的に、キャラクタは移動せずに壁にぶつかって止まっているように見える
     if chara === box
       chara.x -= 2
-    end
-  end
-
-  # 後のキーの設定も行う
-  if Input.keyDown?(K_K)
-    chara.y -= 2
-    if chara === box
-      chara.y += 2
-    end
-  end
-
-  if Input.keyDown?(K_J)
-    chara.y += 2
-    if chara === box
-      chara.y -= 2
-    end
-  end
-
-  if Input.keyDown?(K_H)
-    chara.x -= 2
-    if chara === box
-      chara.x += 2
     end
   end
 
