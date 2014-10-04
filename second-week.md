@@ -125,6 +125,10 @@ end
 
 ```ruby
 array = [1, "test"]
+
+print(array) #=> [1, "test"]
+print(array[0]) #=> 1
+print(array[1]) #=> test
 ```
 
 この様な記述の方法を使う事で、
