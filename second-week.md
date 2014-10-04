@@ -135,3 +135,78 @@ print(array[1]) #=> test
 Sprite データを画面に表示する時のプログラムを纏める事が出来ます。
 これを利用し、
 問題 8. で作成したプログラムに存在している Sprite.draw の部分を 1 行に纏めて下さい。
+
+### Map の作り方
+
+Map という名前がついてる為、キャラクタとは異なるモノを連想しがちですが、
+基本的に Map も画像を並べているだけ
+(障害物や人等の意味合いをもたせるのはあくまでもプログラムの仕事) で、
+自分が表現したいように画像を並べる方法を覚えると、
+簡単に Map を生成することが出来ます。
+
+Map を作成するには、既に習った配列と繰り返しを使用する事で出来ます。
+手作業で Map を作成する場合、
+下記の様なプログラムを作成する事になります。
+
+```ruby
+require 'dxruby'
+
+image = Image.load_tiles("../image/colorbox.png", 6, 1)
+
+gray1 = Sprite.new(0,0,image[5])
+gray2 = Sprite.new(20,0,image[5])
+gray3 = Sprite.new(40,0,image[5])
+gray4 = Sprite.new(60,0,image[5])
+gray5 = Sprite.new(80,0,image[5])
+gray6 = Sprite.new(100,0,image[5])
+gray7 = Sprite.new(120,0,image[5])
+gray8 = Sprite.new(140,0,image[5])
+gray9 = Sprite.new(160,0,image[5])
+gray10 = Sprite.new(180,0,image[5])
+
+Window.loop do
+  Sprite.draw(gray1)
+  Sprite.draw(gray2)
+  Sprite.draw(gray3)
+  Sprite.draw(gray4)
+  Sprite.draw(gray5)
+  Sprite.draw(gray6)
+  Sprite.draw(gray7)
+  Sprite.draw(gray8)
+  Sprite.draw(gray9)
+  Sprite.draw(gray10)
+end
+```
+
+上記プログラムを実行してみると、
+少しばかりのブロックが生成されている事が分かります。
+
+これでは本格的なゲームだけでなく、
+簡単なゲームを作るだけでもかなりの労力を伴います。
+その為、繰り返しを使う訳です。
+
+上記のプログラムを繰り返しを使用して書き直すと下記の様になります。
+
+```ruby
+require 'dxruby'
+
+block_x = 0
+block_y = 0
+count = 0
+sprites = []
+
+images = Image.load_tiles("../image/colorbox.png", 6, 1)
+
+loop do
+  sprites[count] = Sprite.new(block_x, block_y, images[5])
+  if 180 < block_x
+    break
+  end
+  block_x = block_x + 20
+  count = count + 1
+end
+
+Window.loop do
+  Sprite.draw(sprites)
+end
+```
