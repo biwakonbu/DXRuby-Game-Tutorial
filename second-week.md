@@ -96,10 +96,10 @@ Sprite データとして ２ つの画像 (オブジェクト) を用意しま�
 サンプルコードを実行して衝突する事と確認して下さい。
 ```ruby
 image_chara = Image.load_tiles("../character.png", 4, 4)
-chara = Sprite.new(400, 200, image_chara[0])
+chara = Sprite.new(200, 200, image_chara[0])
 
 image_box = Image.load_tiles("../image/colorbox.png", 6, 1)
-box = Sprite.new(200, 200, image_box[0])
+box = Sprite.new(400, 200, image_box[0])
 
 Window.loop do
   if Input.keyDown?(K_L)
