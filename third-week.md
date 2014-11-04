@@ -121,4 +121,4 @@ puts array #=> [1, 2]
 
 ### アンケート協力のお願い
 
-[アンケートリンク](http://sun-i.org/design/)
+[アンケートリンク](https://sun-i-org.ssl-xserver.jp/jikken/jikken3/)
