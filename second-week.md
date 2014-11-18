@@ -367,14 +367,15 @@ item = nil
 その為、``Sprite.draw`` は変数が nil を持つ際に避ける条件をつけます。
 
 ```ruby
-if item.nil?
+if item.nil? == false
   Sprite.draw(item)
 end
 ```
 
 if の書き方に新しい書き方が出て来ました。
 ``.nil?`` というのは変数の中身が nil かどうかを調査する書き方です。
-なので、調べたい変数に付ける事で調べられます。
+nil の時は ``true`` を返し、それ以外のデータが入っている時は ``false``
+を返します。
 
 #### 問題 15.
 
